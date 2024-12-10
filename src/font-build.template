@@ -1,0 +1,8 @@
+<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>@<%= classPrefix %><%= glyphs[glyphIdx] %>: "<% if (addLigatures) { %><%= glyphs[glyphIdx] %><% } else { %>\<%= codepoints[glyphIdx] %><% } %>";
+<% } %>
+<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
+.<%= classPrefix %><%= glyphs[glyphIdx] %> {
+	&:before {
+		content: @<%= classPrefix %><%= glyphs[glyphIdx] %>;
+	}
+}<% } %>

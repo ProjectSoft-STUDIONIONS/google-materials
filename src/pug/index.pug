@@ -1,0 +1,30 @@
+doctype html
+html
+	head
+		title Google Material Icons
+		link(rel="stylesheet" href="css/main.css?" + hash)
+	body
+		include google-material-regular.pug
+		flat
+			a(href="#regular")
+				|Regular
+			a(href="#bold")
+				|Bold
+		div
+		h2#regular.text-center
+			|Google Material Regular
+		ul
+			each icon in icons
+				li
+					i(class=icon)
+					= icon
+		h2#bold.text-center
+			|Google Material Bold
+		ul
+			each icon in icons
+				li
+					strong
+						i(class=icon)
+					= icon
+		script
+			|let i;const gea = (element, parent = document) => {return parent.querySelectorAll(element)},ge = (element, parent = document) => {return parent.querySelector(element)},div = ge('div'),copyContent = async (text) => {clearTimeout(i);div.classList.remove('copy');let textArea = document.createElement('textarea');document.body.append(textArea);textArea.value = text;textArea.select();document.execCommand("copy");div.innerText = text;div.classList.add('copy');textArea.remove();i = setTimeout(() => {div.innerText = "";div.classList.remove('copy');}, 2000);};[...gea('li i')].forEach((e, f, g) => {e.addEventListener('click', (e) => {e.preventDefault();copyContent(e.target.outerHTML);return !1;});});

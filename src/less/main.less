@@ -1,0 +1,133 @@
+@import "material.css";
+
+@gap: 15px;
+
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+
+body {
+	font-size: 1.2em;
+	margin: 0;
+}
+
+h2 {
+	font-family: Calibri;
+	font-size: 3em;
+}
+
+div {
+	background-color: #fff;
+	color: #000;
+	padding: @gap;
+	position: fixed;
+	top: @gap;
+	left: @gap;
+	box-shadow: 0 0 4px 2px #00ff00;
+	border-radius: 5px;
+	display: none;
+	font-size: 14px;
+	font-family: 'JetBrains Mono', monospace;
+	&::before {
+		content: "Скопировано";
+		margin-bottom: 10px;
+		display: block;
+		color: green;
+		text-align: center;
+		font-size: 30px;
+	}
+	&:empty {
+		position: relative;
+		box-shadow: unset;
+		border-radius: unset;
+		padding: unset;
+		left: unset;
+		top: unset;
+		&::before {
+			display: none;
+		}
+	}
+	&.copy {
+		display: block;
+		&:empty {
+			display: none;
+		}
+	}
+}
+@gap2: @gap * 2;
+ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: @gap;
+	list-style:none;
+	margin:0;
+	overflow: hidden;
+	max-width: 100%;
+	padding: 5px 0;
+	li {
+		width: calc(100% / 7 - @gap2);
+		padding: 0;
+		margin: 0;
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content:center;
+		box-shadow: 0 0 2px black;
+		padding-bottom: 10px;
+		@media(max-width: 1600px) {
+			width: calc(100% / 6 - @gap2);
+		}
+		@media(max-width: 1400px) {
+			width: calc(100% / 5 - @gap2);
+		}
+		@media(max-width: 1200px) {
+			width: calc(100% / 4 - @gap2);
+		}
+		@media(max-width: 1100px) {
+			width: calc(100% / 3 - @gap2);
+		}
+		@media(max-width: 730px) {
+			width: calc(100% / 2 - @gap2);
+		}
+		@media(max-width: 440px) {
+			width: calc(100% - @gap2);
+		}
+	}
+}
+
+i {
+	display:block;
+	font-size: 10em;
+	&::before {
+		cursor: pointer;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+flat {
+	display: flex;
+	gap: @gap;
+	padding: 10px @gap;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 0 0 2px 1px black;
+	position: fixed;
+	top: @gap;
+	right: @gap;
+	a {
+		display: block;
+		color: red;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

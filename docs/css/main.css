@@ -1,0 +1,133 @@
+@import "material.css";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.2em;
+  margin: 0;
+}
+h2 {
+  font-family: Calibri;
+  font-size: 3em;
+}
+div {
+  background-color: #fff;
+  color: #000;
+  padding: 15px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  box-shadow: 0 0 4px 2px #00ff00;
+  border-radius: 5px;
+  display: none;
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+}
+div::before {
+  content: "Скопировано";
+  margin-bottom: 10px;
+  display: block;
+  color: green;
+  text-align: center;
+  font-size: 30px;
+}
+div:empty {
+  position: relative;
+  box-shadow: unset;
+  border-radius: unset;
+  padding: unset;
+  left: unset;
+  top: unset;
+}
+div:empty::before {
+  display: none;
+}
+div.copy {
+  display: block;
+}
+div.copy:empty {
+  display: none;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  max-width: 100%;
+  padding: 5px 0;
+}
+ul li {
+  width: calc(100% / 7 - 30px);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 2px black;
+  padding-bottom: 10px;
+}
+@media (max-width: 1600px) {
+  ul li {
+    width: calc(100% / 6 - 30px);
+  }
+}
+@media (max-width: 1400px) {
+  ul li {
+    width: calc(100% / 5 - 30px);
+  }
+}
+@media (max-width: 1200px) {
+  ul li {
+    width: calc(100% / 4 - 30px);
+  }
+}
+@media (max-width: 1100px) {
+  ul li {
+    width: calc(100% / 3 - 30px);
+  }
+}
+@media (max-width: 730px) {
+  ul li {
+    width: calc(100% / 2 - 30px);
+  }
+}
+@media (max-width: 440px) {
+  ul li {
+    width: calc(100% - 30px);
+  }
+}
+i {
+  display: block;
+  font-size: 10em;
+}
+i::before {
+  cursor: pointer;
+}
+.text-center {
+  text-align: center;
+}
+flat {
+  display: flex;
+  gap: 15px;
+  padding: 10px 15px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 1px black;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}
+flat a {
+  display: block;
+  color: red;
+  text-decoration: none;
+}
+flat a:hover {
+  text-decoration: underline;
+}

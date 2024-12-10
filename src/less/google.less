@@ -1,0 +1,31 @@
+@font-face {
+	font-family:"Google Material";
+	src: url("@{fontpath}/google-material-regular.woff2?@{hash}") format("woff2"),
+		url("@{fontpath}/google-material-regular.woff?@{hash}") format("woff"),
+		url("@{fontpath}/google-material-regular.ttf?@{hash}") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family:"Google Material";
+	src: url("@{fontpath}/google-material-bold.woff2?@{hash}") format("woff2"),
+		url("@{fontpath}/google-material-bold.woff?@{hash}") format("woff"),
+		url("@{fontpath}/google-material-bold.ttf?@{hash}") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+[class^="gm-"]:before,
+[class*=" gm-"]:before {
+	font-family: "Google Material" !important;
+	speak: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
